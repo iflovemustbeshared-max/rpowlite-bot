@@ -18,8 +18,9 @@ logger = logging.getLogger(__name__)
 
 # Environment variables
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+PRIVKEY = os.getenv("PRIVKEY") # New environment variable for private key
 
-rpow_client = RpowClient()
+rpow_client = RpowClient(privkey=PRIVKEY)
 
 # PoW Solver (simple brute-force for demonstration)
 async def solve_pow(nonce_prefix, difficulty_bits):

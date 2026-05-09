@@ -16,6 +16,7 @@ Bot Telegram interaktif untuk berinteraksi dengan API rpow.hopeware.ltd. Bot ini
     - Hubungkan dengan repositori GitHub Anda.
 3.  **Konfigurasi Variabel Lingkungan (Environment Variables):**
     - `TELEGRAM_BOT_TOKEN`: Token bot Telegram Anda (dapatkan dari @BotFather).
+    - `PRIVKEY`: Kunci pribadi (private key) Anda untuk autentikasi dengan API rpow.hopeware.ltd. (Opsional, hanya jika API memerlukan autentikasi dengan privkey).
 4.  **Deploy:**
     - Railway akan secara otomatis mendeteksi `Dockerfile` dan melakukan build serta deploy.
 

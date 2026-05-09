@@ -4,12 +4,16 @@ import os
 BASE_URL = "https://rpow.hopeware.ltd"
 
 class RpowClient:
-    def __init__(self):
+    def __init__(self, privkey=None):
         self.session = requests.Session()
-        # Potentially add headers if needed, based on HAR analysis
-        # self.session.headers.update({
-        #     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
-        # })
+        if privkey:
+            self.session.headers.update({
+                "Authorization": f"Bearer {privkey}"
+            })
+        # Potentially add other default headers if needed, based on HAR analysis
+        self.session.headers.update({
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+        })
 
     def get_challenge(self):
         url = f"{BASE_URL}/beta/challenge"
